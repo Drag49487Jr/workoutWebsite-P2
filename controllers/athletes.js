@@ -5,7 +5,20 @@ module.exports = {
     new: newAthlete,
     aboutMe,
     profile,
+    mealPlans,
 };
+
+
+function mealPlans (req, res) {
+    Athlete.find({}, function(err, athletes) {
+        if (err) return next (err);
+        res.render('athletes/mealPlans', {
+            athletes,
+            user: req.user,
+        });
+    });
+}
+
 
 function profile(req, res) {
     Athlete.find({}, function(err, athletes) {
