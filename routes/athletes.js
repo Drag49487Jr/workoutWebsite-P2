@@ -7,6 +7,7 @@ router.get('/aboutMe', athletesCtrl.aboutMe);
 router.get('/profile', isLoggedIn, athletesCtrl.profile);
 router.post('/profile', athletesCtrl.profile);
 router.get('/mealPlans', athletesCtrl.mealPlans);
+router.get('/exerciseRoutines', athletesCtrl.exerciseRoutines);
 
 
 

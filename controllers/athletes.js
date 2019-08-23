@@ -6,7 +6,18 @@ module.exports = {
     aboutMe,
     profile,
     mealPlans,
+    exerciseRoutines,
 };
+
+function exerciseRoutines(req, res) {
+    Athlete.find({}, function(err, athletes) {
+        if (err) return next (err);
+        res.render('athletes/exerciseRoutines', {
+            athletes,
+            user: req.user,
+        });
+    });
+}
 
 
 function mealPlans (req, res) {
