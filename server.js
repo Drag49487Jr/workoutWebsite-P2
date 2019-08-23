@@ -35,7 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-app.use('/', athletesRouter);
+app.use('/athletes', athletesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

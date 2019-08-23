@@ -4,8 +4,18 @@ module.exports = {
     index,
     new: newAthlete,
     aboutMe,
+    profile,
 };
 
+function profile(req, res) {
+    Athlete.find({}, function(err, athletes) {
+        if (err) return next (err);
+        res.render('athletes/profile', {
+            athletes,
+            user:req.user,
+        });
+    });
+}
 
 function aboutMe(req, res) {
     Athlete.find({}, function(err, athletes) {
