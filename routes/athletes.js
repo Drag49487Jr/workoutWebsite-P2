@@ -4,6 +4,7 @@ var athletesCtrl = require('../controllers/athletes');
 router.get('/athletes', athletesCtrl.index); 
 router.get('/athletes/new', athletesCtrl.new);
 
+
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/auth/google');
