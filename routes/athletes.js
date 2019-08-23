@@ -2,7 +2,8 @@ var router = require('express').Router();
 var athletesCtrl = require('../controllers/athletes');
 /* GET users listing. */
 router.get('/athletes', athletesCtrl.index); 
-router.get('/athletes/new', athletesCtrl.new);
+router.get('/athletes/new', isLoggedIn, athletesCtrl.new);
+router.get('/athletes/aboutMe', athletesCtrl.aboutMe);
 
 
 function isLoggedIn(req, res, next) {

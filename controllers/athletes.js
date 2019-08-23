@@ -3,7 +3,19 @@ const Athlete = require('../models/athlete');
 module.exports = {
     index,
     new: newAthlete,
+    aboutMe,
 };
+
+
+function aboutMe(req, res) {
+    Athlete.find({}, function(err, athletes) {
+        if (err) return next (err);
+        res.render('athletes/aboutMe', {
+            athletes,
+            user:req.user,
+        });
+    });
+}
 
 function newAthlete(req, res) {
     Athlete.find({}, function(err, athletes) {
