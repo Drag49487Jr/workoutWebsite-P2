@@ -1,9 +1,15 @@
 <%- include('../partials/header') %>
 
 <p>Athlete Enters information</p>
-<form id="new-form" action = "/athletes/profile" method = "POST">
-    <label>
-        <input type = "text" 
+<form id="new-form" action = "/athletes/create" method = "POST">
+    <label>First and Last
+        <input type = "text" name = "name">
+    </label>
+    <label> Height
+        <input type = "text" name = "height">
+    </label>
+    <label>Weight
+        <input type = "text" name = "weight">
     </label>
 <input type = "submit" value = "Create Regiment">
 </form>

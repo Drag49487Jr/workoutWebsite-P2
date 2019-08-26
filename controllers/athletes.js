@@ -1,76 +1,54 @@
 const Athlete = require('../models/athlete');
+const Regime = require('../models/regime');
 
 module.exports = {
     index,
     new: newAthlete,
     aboutMe,
-    profile,
-    mealPlans,
-    exerciseRoutines,
+    create,
+    show,
+    mealExercise,
 };
 
-function exerciseRoutines(req, res) {
-    Athlete.find({}, function(err, athletes) {
-        if (err) return next (err);
-        res.render('athletes/exerciseRoutines', {
-            athletes,
-            user: req.user,
-        });
-    });
+
+
+function mealExercise (req, res) {
+        res.render('athletes/mealExercise')
 }
 
-
-function mealPlans (req, res) {
-    Athlete.find({}, function(err, athletes) {
-        if (err) return next (err);
-        res.render('athletes/mealPlans', {
-            athletes,
-            user: req.user,
-        });
+function show(req, res) {
+    for(let key in req.body) {
+        if(req.body[key] === '') delete req.body[key];
+    }
+    var newAthlete = new Regime(req.body);
+        newAthlete.save(function(err) {
+            console.log(err)
+            console.log(newAthlete);
+            res.redirect('create')
+            //console.log(req.body);
     });
 }
-
-
-function profile(req, res) {
-    Athlete.find({}, function(err, athletes) {
-        if (err) return next (err);
-        res.render('athletes/profile', {
-            athletes,
-            user:req.user,
-        });
-    });
-}
+ function create(req, res) { 
+Regime.find({}, function(err, athletes){
+res.render('athletes/create', {athletes});
+console.log(athletes);
+    })
+};
 
 function aboutMe(req, res) {
-    Athlete.find({}, function(err, athletes) {
-        if (err) return next (err);
-        res.render('athletes/aboutMe', {
-            athletes,
-            user:req.user,
-        });
-    });
+        res.render('athletes/aboutMe')
+     
 }
 
 function newAthlete(req, res) {
-    Athlete.find({}, function(err, athletes) {
-        if (err) return next(err);
-        res.render('athletes/new',  {
-         athletes,
-         user: req.user,
-        });
-    });
+        res.render('athletes/new');
 }
 function index(req, res) {
-    // console.log(req.query)
-    // let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-    // let sortKey = req.query.sort || 'name';
     Athlete.find({}, function(err, athletes) {
         if (err) return next(err);
         res.render('athletes/index', {
             athletes,
             user: req.user,
-            // name: req.query.name,
-            // sortKey
         });
     });
 
