@@ -1,10 +1,8 @@
 <%- include('../partials/header')%>
 <p>WHATS UP ATHLETE</p>
 <% athletes.forEach(function(a) { %>
-        <td><%= a.name %></td>
-        <td><%= a.height%></td>
-        <td><%= a.weight%></td>
-        <td><a href = "/athletes/mealExercise">Meal Plans and Exercise Routines</a></td>
+        <li id = "info"><%= a.name %> <%= a.height%> <%= a.weight%></li>
+        <td class = "details"><a href = "/athletes/mealExercise">Meal Plans and Exercise Routines</a></td>
   <% }); %>
 
 <%- include('../partials/footer')%>
