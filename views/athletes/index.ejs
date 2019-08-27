@@ -7,26 +7,27 @@
     <link rel = "stylesheet" href = "/stylesheets/style.css"
 </head>
 <body>
-    <h1 id = "title">Landing Page</h1>
     <nav>
-    <ul class="nav-bar">
-        <li class = "link">
-        <% if (user) { %>
-            <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-        <% } else { %>
-            <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
-        <% } %>
-        </li>
-        <li class = "link">
-            <a href = "/athletes/new">New Regiment</a>
-        </li>
-        <li class = "link"> 
-            <a href = "/athletes/create">Review Regiment</a>
-        </li>
-        <li class = "link">
-            <a href = "/athletes/aboutMe">About Me</a>
-        </li>
-    </ul>
-</nav>
-</body>
+        <img class = "logo" src="/images/logo.jpg" alt="logo">
+        <ul class="nav-bar">
+            <li class = "link">
+                <a href = "/athletes/new">New Regiment</a>
+            </li>
+            <li class = "link"> 
+                <a href = "/athletes/create">Review Regiment</a>
+            </li>
+            <li class = "link">
+                <a href = "/athletes/aboutMe">About Me</a>
+            </li>
+            <li class = "link">
+                <% if (user) { %>
+                    <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+                    <% } else { %>
+                        <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+                        <% } %>
+                    </li>
+                </ul>
+            </nav>
+            <h1 id = "title">U Pumped Bro?</h1>
+        </body>
 </html>
