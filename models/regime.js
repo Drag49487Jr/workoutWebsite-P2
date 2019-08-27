@@ -19,14 +19,13 @@ var exerciseSchema = new Schema ({
 
 var regimentSchema = new Schema ({
 name:String,
-height:Number,
+height: {
+    type:String, match: /(\d{1,2}'\d{1,2})/
+},
 weight:Number,
 mealPlan: [mealPlanSchema],
 exercise: [exerciseSchema],
 });
-
-
-
 
 
 module.exports = mongoose.model ('Regime', regimentSchema);
