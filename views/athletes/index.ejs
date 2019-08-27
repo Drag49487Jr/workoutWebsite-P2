@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel = "stylesheet" href = "/stylesheets/style.css"
 </head>
 <body>
-    <h1>Landing Page</h1>
+    <h1 id = "title">Landing Page</h1>
+    <nav>
     <ul class="nav-bar">
-        <li>
+        <li class = "link">
         <% if (user) { %>
             <a href="/logout"><i class="material-icons left"></i>Log Out</a>
         <% } else { %>
             <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
         <% } %>
         </li>
+        <li class = "link">
+            <a href = "/athletes/new">New Regiment</a>
+        </li>
+        <li class = "link"> 
+            <a href = "/athletes/create">Review Regiment</a>
+        </li>
+        <li class = "link">
+            <a href = "/athletes/aboutMe">About Me</a>
+        </li>
     </ul>
-    
-    
-    
-    <a href = "/athletes/new">New Regiment</a>
-    <a href = "/athletes/create">Review Regiment</a>
-    <a href = "/athletes/aboutMe">About Me</a>
+</nav>
 </body>
 </html>
