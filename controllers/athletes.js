@@ -11,7 +11,6 @@ module.exports = {
 };
 
 
-
 function mealExercise (req, res) {
         res.render('athletes/mealExercise')
 }
@@ -28,6 +27,7 @@ function show(req, res) {
             //console.log(req.body);
     });
 }
+
  function create(req, res) { 
 Regime.find({}, function(err, athletes){
 res.render('athletes/create', {athletes});
@@ -37,7 +37,6 @@ console.log(athletes);
 
 function aboutMe(req, res) {
         res.render('athletes/aboutMe')
-     
 }
 
 function newAthlete(req, res) {

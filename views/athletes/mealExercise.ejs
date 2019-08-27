@@ -9,12 +9,49 @@
 <button type = "submit">Add Meals</button>
 </section>
 
-<section class = "exercise">
-<input type = "text" name = "">
-<input type = "text" name = "">
-<input type = "text" name = "">
-<button type = "submit">Add Exercises</button>
+<form id = "add-exercise-form" method = "POST" action = "/athletes/<%= regime._id %>/mealExercise">
+    <section class = "exercise">
+        <label>Exercise's:
+        <select name = "nameExercise">
+            <option value = "Squats w/ Weight">LEGS:Squats w/ Weight</option>
+            <option value = "Barbell Hip Thrust">LEGS/BOOTY:Barbell Hip Thrust</option>
+            <option value = "Dumbbell Bullgarian Split">LEGS:Dumbbell Bulgarian Split</option>
+            <option value = "Heals to the Heavans">ABS:Heals to the Heavans</option>
+            <option value = "Alternating Thread the Needle">ABS:Alternating Thread the Needle</option>
+            <option value = "Stationary Bike">ABS:Stationary Bike</option>
+    </select>Sets:
+    <select name = "sets">
+        <option value = "0">0</option>
+        <option value = "1">1</option>
+        <option value = "2">2</option>
+        <option value = "3">3</option>
+        <option value = "4">4</option>
+    </select>Reps:
+    <select name = "reps">
+        <option value = "0">0</option>
+        <option value = "10">10</option>
+        <option value = "15">15</option>
+        <option value = "20">20</option>
+    </select>Time:
+    <select name = "time">
+        <option value = "30sec">30sec</option>
+        <option value = "45sec">45sec</option>
+        <option value = "1min">1min</option>
+        <option value = "1min30sec">1min30sec</option>
+        <option value = "2min">2min</option>
+    </select>
+    </label>
+    <button type = "submit">Add Exercises</button>
 </section>
+</form>
+<% regime.exercise.forEach(function(e) { %>
+<section>
+    <td><%= e.nameExercise %></td>
+    <td><%= e.sets %></td>
+    <td><%= e.reps %></td>
+    <td><%= e.time %></td>
+</section>
+<% }); %>
 
 
 

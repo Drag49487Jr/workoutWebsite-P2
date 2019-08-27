@@ -2,7 +2,7 @@
 <p>WHATS UP ATHLETE</p>
 <% athletes.forEach(function(a) { %>
         <li id = "info">Name: <%= a.name %> <br>Height: <%= a.height%> <br>Weight: <%= a.weight%> lbs</li>
-        <td class = "details"><a href = "/athletes/mealExercise">Meal Plans and Exercise Routines</a></td>
+        <td class = "details"><a href = "/athletes/<%= a._id %>/mealExercise">Meal Plans and Exercise Routines</a></td>
   <% }); %>
 
 <%- include('../partials/footer')%>
