@@ -71,5 +71,16 @@ nav {
 #info{
   list-style: none;
 }
-
-
+#tag{
+  position: absolute;
+  top:90%;
+  left:40%;
+}
+.meal{
+  position:absolute;
+  right:60%;
+}
+.exercise{
+  position:absolute;
+left:50%;
+}
