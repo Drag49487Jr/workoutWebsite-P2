@@ -5,6 +5,8 @@ module.exports = {
     show,
 };
 
+
+
 function show(req, res) {
         Regime.findById(req.params.id, function(err, regime) {
         res.render(`athletes/mealExercise`, { regime });

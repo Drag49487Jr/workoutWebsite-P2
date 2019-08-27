@@ -5,9 +5,14 @@ var Schema = mongoose.Schema;
 
 
 var mealPlanSchema = new Schema ({
-    nameMeal:String,
-    quantity: Number,
-
+    nameMeal:{
+        type:String,
+        enum:['eggs','milk','bread','water','fruit'],
+    },
+    quantity: {
+        type:Number,
+        enum:['1','2','3','4'],
+    }
 });
 
 
