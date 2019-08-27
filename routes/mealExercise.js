@@ -1,7 +1,7 @@
 var router = require('express').Router();
-var mealExerciseCtrl = require('../controllers/mealExercise');
+var exerciseCtrl = require('../controllers/exercise');
 
-router.get('/athletes/:id/mealExercise', mealExerciseCtrl.show);
-router.post('/athletes/:id/mealExercise', mealExerciseCtrl.create);
+router.get('/athletes/:id/mealExercise', exerciseCtrl.show);
+router.post('/athletes/:id/mealExercise', exerciseCtrl.create);
 
 module.exports = router;
