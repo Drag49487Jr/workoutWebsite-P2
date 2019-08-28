@@ -11,6 +11,7 @@ function show(req, res) {
         Regime.findById(req.params.id, function(err, regime) {
         res.render('athletes/mealExercise', { regime });
     })
+    
 }
 
 function create(req, res) {
