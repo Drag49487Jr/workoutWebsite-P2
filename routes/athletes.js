@@ -8,7 +8,7 @@ router.post('/home', athletesCtrl.create); // will post a new regiment
 
 
 router.get('/aboutMe', athletesCtrl.aboutMe);
-router.get('/home', athletesCtrl.home);
+router.get('/:id/home', athletesCtrl.home);
 router.get('/:id', athletesCtrl.mealExercise);
 
 
