@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
+var methodOverride = require('method-override');
 
 require('dotenv').config();
 var app = express();
@@ -13,6 +14,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var athletesRouter = require('./routes/athletes');
+var mealExerciseRouter = require('./routes/mealExercise');
 
 
 // view engine setup
@@ -24,6 +26,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 
 app.use(session({
   secret: 'GYMRules',

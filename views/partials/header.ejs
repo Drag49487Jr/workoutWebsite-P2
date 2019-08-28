@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://kit.fontawesome.com/928dbe508c.js"></script>    
 </head>
 <body>
-    <ul class="nav-bar">
-        <li>
         <% if (user) { %>
             <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-        <% } else { %>
-            <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
-        <% } %>
-        </li>
-    </ul>
+            <% } else { %>
+                <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+                <% } %>
 </body>
 </html>

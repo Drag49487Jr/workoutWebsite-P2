@@ -1,16 +1,18 @@
 var router = require('express').Router();
 var athletesCtrl = require('../controllers/athletes');
+
 /* GET users listing. */
-router.get('/', athletesCtrl.index); 
-router.get('/new', isLoggedIn, athletesCtrl.new);
+router.get('/', athletesCtrl.index); // home page
+router.get('/new', athletesCtrl.new); // serves form for new regiment
+router.post('/home', athletesCtrl.create); // will post a new regiment 
+router.get('/:id/home', athletesCtrl.home);
+
+
+router.get('/:id/mealExercise', athletesCtrl.mealExercise);
+router.post('/:id/mealExercise', athletesCtrl.exercise);
+
+
 router.get('/aboutMe', athletesCtrl.aboutMe);
-router.get('/profile', isLoggedIn, athletesCtrl.profile);
-router.post('/profile', athletesCtrl.profile);
-router.get('/mealPlans', athletesCtrl.mealPlans);
-router.get('/exerciseRoutines', athletesCtrl.exerciseRoutines);
-
-
-
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/auth/google');

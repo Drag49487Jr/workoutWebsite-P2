@@ -1,8 +1,86 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+h1{
+  font-weight: lighter;
+  font-size: 80px;
+  color: black;
+  text-align:center;
+  padding: top 50px;
+  margin-bottom: 0;
+}
+.mt {
+  color: black;
+  text-align:center;
+  font-weight:lighter;
+  font-size:20px;
+  margin-top:0;
+}
+.media{
+  position:absolute;
+  top:40%;
+  left:50%;
+
 }
 
-a {
-  color: #00B7FF;
+.social{
+  list-style: none;
+  margin: 10px 30px;
+  display: inline-block;
+  font-size:20px;
+  padding:20px 20px;
+  color:black;
+  border:1px solid black;
+  border-radius: 50%;
+  transition: .5s;
+}
+.social:hover{
+  color:red;
+  border:1px solid red;
+  transition:.5s;
+}
+
+.nav-bar, .link{
+ font-size:16px;
+ color:red;
+ list-style: none;
+ text-decoration: none;
+}
+nav {
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 30px 10%;
+  background-color:black;
+}
+.logo{
+  width:100px;
+}
+.link{
+  display:inline-block;
+  padding:0px 20px;
+}
+
+.link:hover {
+  color:red;
+  transition:5s;
+}
+#curl-side{
+  width:200px;
+}
+#smile{
+  width:200px;
+}
+#info{
+  list-style: none;
+}
+#tag{
+  position: absolute;
+  top:90%;
+  left:40%;
+}
+.meal{
+  position:absolute;
+  right:60%;
+}
+.exercise{
+  position:absolute;
+left:50%;
 }
