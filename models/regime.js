@@ -27,7 +27,8 @@ var exerciseSchema = new Schema({
   },
   sets: {
     type: Number,
-    enum: ['0', '1', '2', '3', '4']
+    min:0,
+    max:5,
   },
   reps: {
     type: Number,

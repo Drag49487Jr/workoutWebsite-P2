@@ -8,8 +8,21 @@ module.exports = {
   create: createRegiment,
   aboutMe,
   show,
-  mealExercise
+  mealExercise,
+  exercise
 }
+
+
+function exercise (req, res) {
+  Regiment.findById(req.params.id, function(err, regime) {
+            regime.exercise.push(req.body);
+            regime.save(function(err) {
+            console.log('is there a regimr', regime)
+            res.redirect(`/athletes/${regime._id}/mealExercise`);
+            });
+        });
+}
+
 
 // This should find the athlete logged in by ID, then allow you to access the user model, from there you should be able to get into the regiment array to access the regiment object
 function home(req, res) {
@@ -31,13 +44,13 @@ function newAthlete(req, res) {
 
 // This should create a new regiment to be added to the DB
 function createRegiment(req, res) {
-console.log('req.user: ', req.user);
+// console.log('req.user: ', req.user);
   let newRegiment = new Regiment(req.body) // create a new instance of an regiment
   newRegiment.save((err) => {
-    console.log('reg save error: ', err);
+    // console.log('reg save error: ', err);
     Athlete.findById(req.user._id, (err, athlete) => {
       // find athlete to push the new regiment ID into the reference ARR
-      console.log(athlete)
+    //   console.log(athlete)
       athlete.regiments.push(newRegiment._id) // acutaly push into ARR
       athlete.save(err => {
         // Saves the athlete model, with new reference to regiment
@@ -52,7 +65,12 @@ console.log('req.user: ', req.user);
 }
 
 function mealExercise(req, res) {
-  res.render('athletes/mealExercise')
+    Regiment.findById(req.params.id, function(err, regime) {
+    res.render('athletes/mealExercise',{
+        regime,
+        user: req.user,
+        })
+    })
 }
 
 function show(req, res) {
@@ -61,8 +79,8 @@ function show(req, res) {
   }
   var newAthlete = new Regime(req.body)
   newAthlete.save(function(err) {
-    console.log(err)
-    console.log(newAthlete)
+    // console.log(err)
+    // console.log(newAthlete)
     res.redirect('create')
     //console.log(req.body);
   })
@@ -80,11 +98,13 @@ function aboutMe(req, res) {
 }
 
 function index(req, res) {
-  Athlete.find({}, function(err, athletes) {
+  Athlete.findById(req.user._id, function(err, athletes) {
     if (err) return next(err)
     res.render('athletes/index', {
       athletes,
       user: req.user
     })
+    console.log('is there a user', req.user);
+    console.log('is there a athlete', athletes);
   })
 }
