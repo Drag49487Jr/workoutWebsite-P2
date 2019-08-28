@@ -5,11 +5,11 @@ router.get('/', athletesCtrl.index);
 router.get('/aboutMe', athletesCtrl.aboutMe);
 router.get ('/new', isLoggedIn, athletesCtrl.new);
 router.get('/create', isLoggedIn, athletesCtrl.create);
-router.get('/:id', athletesCtrl.mealExercise);
+router.get('/:id',athletesCtrl.mealExercise);
 
 
 
-router.post('/create', athletesCtrl.show);
+router.post('/create',athletesCtrl.show);
 
 
 function isLoggedIn(req, res, next) {
