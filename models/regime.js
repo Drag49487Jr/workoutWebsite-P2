@@ -1,9 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
-
-
 var mealPlanSchema = new Schema ({
     nameMeal:{
         type:String,
@@ -14,7 +11,6 @@ var mealPlanSchema = new Schema ({
         enum:['1','2','3','4'],
     }
 });
-
 
 var exerciseSchema = new Schema ({
     nameExercise:{
@@ -36,15 +32,5 @@ var exerciseSchema = new Schema ({
     }
 });
 
-var regimentSchema = new Schema ({
-name: String,
-height: {
-    type:String, match: /(\d{1,2}'\d{1,2})/
-},
-weight:Number,
-mealPlan: [mealPlanSchema],
-exercise: [exerciseSchema],
-});
-
-
-module.exports = mongoose.model ('Regime', regimentSchema);
+module.exports = mongoose.model ('MealPlan', mealPlanSchema);
+module.exports = mongoose.model ('Exercise', exerciseSchema);
