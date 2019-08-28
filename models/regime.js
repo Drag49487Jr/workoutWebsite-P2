@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
+var Athlete = require('../models/athlete')
+
 var Schema = mongoose.Schema;
+
 
 var mealPlanSchema = new Schema ({
     nameMeal:{
@@ -32,5 +35,17 @@ var exerciseSchema = new Schema ({
     }
 });
 
-module.exports = mongoose.model ('MealPlan', mealPlanSchema);
-module.exports = mongoose.model ('Exercise', exerciseSchema);
+var regimentSchema = new mongoose.Schema ({
+    // athelte: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Athlete'
+    // }],
+    height: {
+        type:String, match: /(\d{1,2}'\d{1,2})/
+    },
+    weight:Number,
+    mealPlan: [mealPlanSchema],
+    exercise: [exerciseSchema],
+});
+
+module.exports = mongoose.model ('Regiment', regimentSchema);

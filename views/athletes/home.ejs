@@ -1,8 +1,11 @@
 <%- include('../partials/header')%>
+
 <p>WHATS UP ATHLETE</p>
-<% athletes.forEach(function(a) { %>
-        <li id = "info">Name: <%= a.name %> <br>Height: <%= a.height%> <br>Weight: <%= a.weight%> lbs</li>
+
+<% athlete.regiments.forEach(function(r) { %>
+        <li id = "info">Name: <%= r.name %> <br>Height: <%= r.height%> <br>Weight: <%= r.weight%> lbs</li>
         <td class = "details"><a href = "/athletes/<%= a._id %>/mealExercise">Meal Plans and Exercise Routines</a></td>
   <% }); %>
+
 
 <%- include('../partials/footer')%>
