@@ -1,2 +1,19 @@
 <%- include('../partials/header') %>
 <h1>Meal Plan</h1>
+<form id="add-meal-form" action="/athletes/<%= regime._id %>/mealPlan" method="POST">
+    <select name="nameMeal">
+        <option value="eggs">eggs</option>
+        <option value="milk">milk</option>
+        <option value="bread">bread</option>
+        <option value="water">water</option>
+        <option value="fruit">fruit</option>
+    </select>
+    <input type="number" name="quantity">
+        <button type="submit">Add Meals</button>
+</form>
+<% regime.mealPlan.forEach(function(m) { %>
+    <section>
+        <td>Name: <%= m.nameMeal %></td>
+        <td>Servings: <%= m.quantity %></td>
+    </section>
+    <% }); %>

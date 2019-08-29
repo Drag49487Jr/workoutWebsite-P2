@@ -16,7 +16,7 @@ module.exports = {
 
 function meal (req, res) {
   Regiment.findById(req.params.id, (err, regime)=>{
-    regime.meal.push(req.body);
+    regime.mealPlan.push(req.body);
     regime.save(function(err) {
       res.redirect(`/athletes/${regime._id}/mealPlan`);
     });

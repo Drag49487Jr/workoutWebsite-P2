@@ -4,19 +4,22 @@ var Schema = mongoose.Schema
 
 var mealPlanSchema = new Schema({
   nameMeal: {
-    type: String,
-    enum: ['eggs', 'milk', 'bread', 'water', 'fruit']
+    type:String,
+    enum:[
+      'eggs',
+      'milk',
+      'bread',
+      'water',
+      'fruit',
+    ]
   },
-  quantity: {
-    type: Number,
-    enum: ['1', '2', '3', '4'] 
-  }
+  quantity:Number,
 })
 
 var exerciseSchema = new Schema({
   nameExercise: {
-    type: String,
-    enum: [
+    type:String,
+    enum:[
       'Squats w/ Weight',
       'Barbell Hip Thrust',
       'Dumbbell Bulgarian Split',
@@ -25,19 +28,17 @@ var exerciseSchema = new Schema({
       'Stationary Bike'
     ]
   },
-  sets: {
+  sets:{
     type: Number,
     min:0,
     max:5,
   },
-  reps: {
+  reps:{
     type: Number,
     min:0,
     max:20,
   },
-  time: {
-    type: String,
-  }
+  time:String,
 })
 
 var regimentSchema = new mongoose.Schema({
@@ -45,10 +46,7 @@ var regimentSchema = new mongoose.Schema({
   //     type: mongoose.Schema.Types.ObjectId,
   //     ref: 'Athlete'
   // }],
-  height: {
-    type: String
-    // match: /(\d{1,2}'\d{1,2})/
-  },
+  height:String,
   weight: Number,
   mealPlan: [mealPlanSchema],
   exercise: [exerciseSchema]
