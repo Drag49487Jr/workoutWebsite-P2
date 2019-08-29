@@ -32,11 +32,11 @@ var exerciseSchema = new Schema({
   },
   reps: {
     type: Number,
-    enum: ['0', '10', '15', '20']
+    min:0,
+    max:20,
   },
   time: {
     type: String,
-    enum: ['30sec', '45sec', '1min', '1min30sec', '2min']
   }
 })
 

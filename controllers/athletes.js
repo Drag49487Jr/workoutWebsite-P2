@@ -29,12 +29,11 @@ function home(req, res) {
   Athlete.findById(req.params.id)
     .populate('regiments')
     .exec((err, athlete) => {
-      console.log(athlete)
       res.render('athletes/home', {
         athlete,
         user: req.user
-      })
-    })
+      });
+    });
 }
 
 // This is the function that serves the form to create a new athlete
@@ -54,14 +53,11 @@ function createRegiment(req, res) {
       athlete.regiments.push(newRegiment._id) // acutaly push into ARR
       athlete.save(err => {
         // Saves the athlete model, with new reference to regiment
-        console.log(
-          'A new regiment was added to the DB, which a user can reference'
-        )
         if (err) return res.redirect('/athletes')
         res.redirect(`/athletes/${req.user._id}/home`)
-      })
-    })
-  })
+      });
+    });
+  });
 }
 
 function mealExercise(req, res) {
@@ -69,8 +65,8 @@ function mealExercise(req, res) {
     res.render('athletes/mealExercise',{
         regime,
         user: req.user,
-        })
-    })
+        });
+    });
 }
 
 function show(req, res) {
@@ -79,19 +75,10 @@ function show(req, res) {
   }
   var newAthlete = new Regime(req.body)
   newAthlete.save(function(err) {
-    // console.log(err)
-    // console.log(newAthlete)
     res.redirect('create')
-    //console.log(req.body);
-  })
+  });
 }
 
-//  function create(req, res) {
-//         Athlete.find({}, function(err, athletes){
-//         res.render('athletes/create', {athletes});
-//         console.log(athletes);
-//     })
-// };
 
 function aboutMe(req, res) {
   res.render('athletes/aboutMe')
@@ -103,8 +90,6 @@ function index(req, res) {
     res.render('athletes/index', {
       athletes,
       user: req.user
-    })
-    console.log('is there a user', req.user);
-    console.log('is there a athlete', athletes);
-  })
+    });
+  });
 }

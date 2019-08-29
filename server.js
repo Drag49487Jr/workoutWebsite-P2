@@ -14,7 +14,6 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var athletesRouter = require('./routes/athletes');
-var mealExerciseRouter = require('./routes/mealExercise');
 
 
 // view engine setup

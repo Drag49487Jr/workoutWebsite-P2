@@ -4,12 +4,11 @@
 
 <% athlete.regiments.forEach(function(r) { %>
 <li id="info">
-  Name: <%= r.name %> <br />Height: <%= r.height%> <br />Weight: <%= r.weight%>
+  Height: <%= r.height%> <br />Weight: <%= r.weight%>
   lbs
 </li>
 <td class="details">
-  <a href="/athletes/<%= r._id %>/mealExercise"
-    >Meal Plans and Exercise Routines</a
-  >
+  <a href="/athletes/<%= r._id %>/mealExercise">Exercise Routines</a>
+  <a href = "">Meal Plans</a>
 </td>
 <% }); %> <%- include('../partials/footer')%>
