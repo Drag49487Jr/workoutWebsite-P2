@@ -14,6 +14,9 @@ module.exports = {
   meal,
 }
 
+
+
+
 function meal (req, res) {
   Regiment.findById(req.params.id, (err, regime)=>{
     regime.mealPlan.push(req.body);

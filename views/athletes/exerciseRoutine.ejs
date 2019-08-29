@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1>Exercise's</h1>
-
+<ul>
 
 
 <form id="add-exercise-form" action="/athletes/<%= regime._id %>/exerciseRoutine" method="POST">
@@ -34,7 +34,7 @@
     <td>Time: <%= e.time %></td>
 </section>
 <% }); %>
+</ul>
 
 
-
-<a id="tag" href="/athletes/home">Create Meal Plan and Exercise Routine</a>
+<a id="tag" href="/athletes">Create Meal Plan and Exercise Routine</a>
