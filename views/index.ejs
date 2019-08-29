@@ -3,14 +3,17 @@
   <head>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-      <li class = "link">
-          <a href = "/athletes/aboutMe">About Me</a>
-      </li>
-      <% if (user) { %>
-              <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-              <% } else { %>
-                  <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
-               <% } %>
+  <div>
+    <img class="front-picture"src="/images/push-up.jpg">
+  </div>
+  <body class="front-page">
+      <li class="link">
+          <a id="about-link"href="/athletes/aboutMe">About Me</a><br>
+          <% if (user) { %>
+            <a class="log-link" href="/logout"><i class="material-icons left"></i>Log Out</a>
+            <% } else { %>
+              <a class="log-link" href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+              <% } %>
+            </li>
   </body>
 </html>

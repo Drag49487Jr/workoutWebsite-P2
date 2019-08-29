@@ -1,6 +1,6 @@
 <%- include('../partials/header')%>
 
-<p>WHATS UP ATHLETE</p>
+<h1>WHATS UP ATHLETE</p>
 
 <% athlete.regiments.forEach(function(r) { %>
 <li id="info">
@@ -9,6 +9,6 @@
 </li>
 <td class="details">
   <a href="/athletes/<%= r._id %>/exerciseRoutine">Exercise Routines</a>
-  <a href = "/athletes/<%= r._id%>/mealPlan">Meal Plans</a>
+  <a href="/athletes/<%= r._id%>/mealPlan">Meal Plans</a>
 </td>
 <% }); %> <%- include('../partials/footer')%>

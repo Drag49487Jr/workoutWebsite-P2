@@ -1,6 +1,10 @@
+* {
+box-sizing:border-box;
+}
+
 h1{
   font-weight: lighter;
-  font-size: 80px;
+  font-size: 40px;
   color: black;
   text-align:center;
   padding: top 50px;
@@ -17,7 +21,6 @@ h1{
   position:absolute;
   top:40%;
   left:50%;
-
 }
 
 .social{
@@ -36,7 +39,39 @@ h1{
   border:1px solid red;
   transition:.5s;
 }
+div .front-picture{
+  height:100%;
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0 auto;
+  filter: blur(8px);
+}
+.front-page #about-link{
+  position:absolute;
+  top:40%;
+  left:42%;
+  text-decoration: none;
+  font-weight:bold;
+  font-size:40px;
+  color:red;
+  background-color:rgba(0,0,0,.4);
+}
+.front-page, #about-link, .log-link{
+  border: 3px solid #f1f1f1;
+}
+.front-page .log-link{
+  position:absolute;
+  top:50%;
+  left:36.5%;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:40px;
+  color:red;
+  background-color:rgba(0,0,0,.4);
 
+}
 .nav-bar, .link{
  font-size:16px;
  color:red;
@@ -57,13 +92,17 @@ nav {
   display:inline-block;
   padding:0px 20px;
 }
-
 .link:hover {
   color:red;
   transition:5s;
 }
 #curl-side{
-  width:200px;
+  height:100%;
+  width:50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0 auto;
 }
 #smile{
   width:200px;
@@ -75,6 +114,14 @@ nav {
   position: absolute;
   top:90%;
   left:40%;
+}
+#about-me-title{
+  position:absolute;
+  left:45%;
+}
+.about-me{
+  position:absolute;
+  top:50%;
 }
 .meal{
   position:absolute;

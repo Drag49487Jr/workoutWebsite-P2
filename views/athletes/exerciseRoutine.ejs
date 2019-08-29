@@ -1,43 +1,38 @@
 <%- include('../partials/header') %>
 
 <h1>Exercise's</h1>
-<ul>
-
-
-<form id="add-exercise-form" action="/athletes/<%= regime._id %>/exerciseRoutine" method="POST">
-    <section class="exercise">
-        <label>Exercise's:
-        <select name="nameExercise">
-            <option value="Squats w/ Weight">LEGS:Squats w/ Weight</option>
-            <option value="Barbell Hip Thrust">LEGS/BOOTY:Barbell Hip Thrust</option>
-            <option value="Dumbbell Bullgarian Split">LEGS:Dumbbell Bulgarian Split</option>
-            <option value="Heals to the Heavans">ABS:Heals to the Heavans</option>
-            <option value="Alternating Thread the Needle">ABS:Alternating Thread the Needle</option>
-            <option value="Stationary Bike">ABS:Stationary Bike</option>
-    </select>
-        Sets:
-            <input type="number" name="sets" min="0" max="5">
-        Reps:
-            <input type="number" name="reps" min="0" max="20">
-        Time:
-            <input type="text" pattern="\d:[0-5]\d" placeholder="1:30" name="time">
-
-    </label>
-    <button type="submit">Add Exercises</button>
-</section>
-</form>
-<% regime.exercise.forEach(function(e) { %>
-<section>
-    <form action="" method="POST" class="delete-form">
-        <button type="submit">X</button>
-    </form>
-    <td>Name: <%= e.nameExercise %></td>
-    <td>Sets: <%= e.sets %></td>
-    <td>Reps: <%= e.reps %></td>
-    <td>Time: <%= e.time %></td>
-</section>
-<% }); %>
-</ul>
-
-
+    <ul>
+        <form id="add-exercise-form" action="/athletes/<%= regime._id %>/exerciseRoutine" method="POST">
+            <section class="exercise">
+                <label>Exercise's:
+                <select name="nameExercise">
+                    <option value="Squats w/ Weight">LEGS:Squats w/ Weight</option>
+                    <option value="Barbell Hip Thrust">LEGS/BOOTY:Barbell Hip Thrust</option>
+                    <option value="Dumbbell Bullgarian Split">LEGS:Dumbbell Bulgarian Split</option>
+                    <option value="Heals to the Heavans">ABS:Heals to the Heavans</option>
+                    <option value="Alternating Thread the Needle">ABS:Alternating Thread the Needle</option>
+                    <option value="Stationary Bike">ABS:Stationary Bike</option>
+            </select>
+                Sets:
+                    <input type="number" name="sets" min="0" max="5">
+                Reps:
+                    <input type="number" name="reps" min="0" max="20">
+                Time:
+                    <input type="text" pattern="\d:[0-5]\d" placeholder="1:30" name="time">
+            </label>
+            <button type="submit">Add Exercises</button>
+        </section>
+        </form>
+        <% regime.exercise.forEach(function(e, idx) { %>
+            <form action="/athletes/<%= idx %>/exerciseRoutine?_method=DELETE" method="POST" class="delete-form">
+                <button type="submit">X</button>
+            </form>
+        <section class="exercise-section">
+            <td>Name: <%= e.nameExercise %></td>
+            <td>Sets: <%= e.sets %></td>
+            <td>Reps: <%= e.reps %></td>
+            <td>Time: <%= e.time %></td>
+        </section>
+        <% }); %>
+    </ul>
 <a id="tag" href="/athletes">Create Meal Plan and Exercise Routine</a>

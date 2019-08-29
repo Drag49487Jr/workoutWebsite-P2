@@ -35,6 +35,7 @@ function mealPlan (req, res) {
   });
 }
 
+
 function exercise (req, res) {
   Regiment.findById(req.params.id, function(err, regime) {
             regime.exercise.push(req.body);

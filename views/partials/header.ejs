@@ -8,12 +8,11 @@
     <script src="https://kit.fontawesome.com/928dbe508c.js"></script>    
 </head>
 <body>
-        <img class = "logo" src="/images/logo.jpg" alt="logo">
-
+        <img class="logo" src="/images/logo.jpg" alt="logo">
         <% if (user) { %>
             <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-            <% } else { %>
-                <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+        <% } else { %>
+            <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
         <% } %>
 </body>
 </html>
