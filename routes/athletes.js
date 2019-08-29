@@ -8,9 +8,11 @@ router.post('/home', athletesCtrl.create); // will post a new regiment
 router.get('/:id/home', athletesCtrl.home);
 
 
-router.get('/:id/mealExercise', athletesCtrl.mealExercise);
-router.post('/:id/mealExercise', athletesCtrl.exercise);
+router.get('/:id/exerciseRoutine', athletesCtrl.exerciseRoutine);
+router.post('/:id/exerciseRoutine', athletesCtrl.exercise);
 
+router.get('/:id/mealPlan', athletesCtrl.mealPlan);
+router.post('/:id/mealPlan', athletesCtrl.meal);
 
 router.get('/aboutMe', athletesCtrl.aboutMe);
 function isLoggedIn(req, res, next) {

@@ -8,21 +8,48 @@ module.exports = {
   create: createRegiment,
   aboutMe,
   show,
-  mealExercise,
-  exercise
+  exerciseRoutine,
+  exercise,
+  mealPlan,
+  meal,
 }
 
+function meal (req, res) {
+  Regiment.findById(req.params.id, (err, regime)=>{
+    regime.meal.push(req.body);
+    regime.save(function(err) {
+      res.redirect(`/athletes/${regime._id}/mealPlan`);
+    });
+  });
+}
+
+function mealPlan (req, res) {
+  Regiment.findById(req.params.id, (err, regime)=>{
+    res.render('athletes/mealPlan', {
+     regime,
+     user: req.user,
+    });
+  });
+}
 
 function exercise (req, res) {
   Regiment.findById(req.params.id, function(err, regime) {
             regime.exercise.push(req.body);
             regime.save(function(err) {
             console.log('is there a regimr', regime)
-            res.redirect(`/athletes/${regime._id}/mealExercise`);
+            res.redirect(`/athletes/${regime._id}/exerciseRoutine`);
             });
         });
 }
 
+function exerciseRoutine(req, res) {
+  Regiment.findById(req.params.id, function(err, regime) {
+  res.render('athletes/exerciseRoutine',{
+      regime,
+      user: req.user,
+      });
+  });
+}
 
 // This should find the athlete logged in by ID, then allow you to access the user model, from there you should be able to get into the regiment array to access the regiment object
 function home(req, res) {
@@ -60,14 +87,6 @@ function createRegiment(req, res) {
   });
 }
 
-function mealExercise(req, res) {
-    Regiment.findById(req.params.id, function(err, regime) {
-    res.render('athletes/mealExercise',{
-        regime,
-        user: req.user,
-        });
-    });
-}
 
 function show(req, res) {
   for (let key in req.body) {
