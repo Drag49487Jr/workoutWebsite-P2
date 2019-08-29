@@ -28,6 +28,9 @@
 </form>
 <% regime.exercise.forEach(function(e) { %>
 <section>
+    <form action="" method="POST" class="delete-form">
+        <button type="submit">X</button>
+    </form>
     <td>Name: <%= e.nameExercise %></td>
     <td>Sets: <%= e.sets %></td>
     <td>Reps: <%= e.reps %></td>
