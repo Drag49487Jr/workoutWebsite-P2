@@ -10,12 +10,10 @@ module.exports = {
   show,
   exerciseRoutine,
   exercise,
+  deleteExercise,
   mealPlan,
   meal,
 }
-
-
-
 
 function meal (req, res) {
   Regiment.findById(req.params.id, (err, regime)=>{
@@ -35,7 +33,18 @@ function mealPlan (req, res) {
   });
 }
 
-
+function deleteExercise(req, res) {
+  Regiment.findById(req.params.id, (err, regime) => {
+    if (err) throw err
+    regime.exercise.id(req.params.eid).remove()
+    regime.save(function (err) {
+    if (err) throw err
+    console.log('resource deleted')
+    res.redirect(`/athletes/${req.params.id}/exerciseRoutine`)
+    })
+  })
+}
+  
 function exercise (req, res) {
   Regiment.findById(req.params.id, function(err, regime) {
             regime.exercise.push(req.body);
@@ -43,14 +52,15 @@ function exercise (req, res) {
             console.log('is there a regimr', regime)
             res.redirect(`/athletes/${regime._id}/exerciseRoutine`);
             });
+            console.log(regime);
         });
 }
 
 function exerciseRoutine(req, res) {
   Regiment.findById(req.params.id, function(err, regime) {
-  res.render('athletes/exerciseRoutine',{
-      regime,
-      user: req.user,
+    res.render('athletes/exerciseRoutine',{
+        regime,
+        user: req.user,
       });
   });
 }

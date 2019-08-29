@@ -52,9 +52,7 @@ var regimentSchema = new mongoose.Schema({
   exercise: [exerciseSchema]
 })
 
-module.exports = mongoose.model('Regiment', regimentSchema)
-
-/*
+module.exports = mongoose.model('Regiment', regimentSchema)/*
 
 Issues line 12, 30, 34 cannot enumerate 
 array of strings for Schema type Number 

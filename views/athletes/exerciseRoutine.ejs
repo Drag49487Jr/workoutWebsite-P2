@@ -23,11 +23,12 @@
             <button type="submit">Add Exercises</button>
         </section>
         </form>
-        <% regime.exercise.forEach(function(e, idx) { %>
-            <form action="/athletes/<%= idx %>/exerciseRoutine?_method=DELETE" method="POST" class="delete-form">
-                <button type="submit">X</button>
+        <% regime.exercise.forEach(function(e) { %>
+            <form action="/athletes/<%= regime._id %>/exerciseRoutine/<%= e._id %>?_method=DELETE" method="POST" class="delete-form">
+                <button data='e._id' type="submit">X</button>
             </form>
         <section class="exercise-section">
+            <% console.log(e._id) %>
             <td>Name: <%= e.nameExercise %></td>
             <td>Sets: <%= e.sets %></td>
             <td>Reps: <%= e.reps %></td>

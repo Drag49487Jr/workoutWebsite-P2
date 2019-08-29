@@ -10,7 +10,7 @@ router.get('/:id/home', athletesCtrl.home);
 
 router.get('/:id/exerciseRoutine', athletesCtrl.exerciseRoutine);
 router.post('/:id/exerciseRoutine', athletesCtrl.exercise);
-// router.delete('/:id/exerciseRoutine', athletesCtrl.deleteExercise)
+router.delete('/:id/exerciseRoutine/:eid', athletesCtrl.deleteExercise)
 
 router.get('/:id/mealPlan', athletesCtrl.mealPlan);
 router.post('/:id/mealPlan', athletesCtrl.meal);
