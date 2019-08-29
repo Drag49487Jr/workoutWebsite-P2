@@ -46,7 +46,7 @@ div .front-picture{
   background-repeat: no-repeat;
   background-size: cover;
   margin:0 auto;
-  filter: blur(8px);
+  filter: blur(4px);
 }
 .front-page #about-link{
   position:absolute;
