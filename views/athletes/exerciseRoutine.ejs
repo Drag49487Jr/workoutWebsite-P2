@@ -24,7 +24,7 @@
         </section>
         </form>
         <% regime.exercise.forEach(function(e) { %>
-            <form action="/athletes/<%= regime._id %>/exerciseRoutine/<%= e._id %>?_method=DELETE" method="POST" class="delete-form">
+            <form action="/athletes/<%= regime._id %>/exerciseRoutine/<%= e._id %>?_method=DELETE" method="POST" class="delete-exercise-form">
                 <button data='e._id' type="submit">X</button>
             </form>
         <section class="exercise-section">

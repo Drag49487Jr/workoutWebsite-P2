@@ -12,6 +12,9 @@
         <button type="submit">Add Meals</button>
 </form>
 <% regime.mealPlan.forEach(function(m) { %>
+    <form action="/athletes/<%= regime._id %>/mealPlan/<%= m._id %>?_method=DELETE" method="POST" class="delete-meal-form">
+        <button data='m._id' type="submit">X</button>
+    </form>
     <section class="meal-section">
         <td>Name: <%= m.nameMeal %></td>
         <td>Servings: <%= m.quantity %></td>

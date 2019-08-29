@@ -13,6 +13,17 @@ module.exports = {
   deleteExercise,
   mealPlan,
   meal,
+  deleteMeal,
+}
+function deleteMeal(req, res) {
+  Regiment.findById(req.params.id, (err, regime)=>{
+    if (err) throw err
+    regime.mealPlan.id(req.params.eid).remove()
+    regime.save(function(err) {
+      if (err) throw err
+      res.redirect(`/athletes/${req.params.id}/mealPlan`)
+    });
+  });
 }
 
 function meal (req, res) {

@@ -14,6 +14,7 @@ router.delete('/:id/exerciseRoutine/:eid', athletesCtrl.deleteExercise)
 
 router.get('/:id/mealPlan', athletesCtrl.mealPlan);
 router.post('/:id/mealPlan', athletesCtrl.meal);
+router.delete('/:id/mealPlan/:eid', athletesCtrl.deleteMeal);
 
 router.get('/aboutMe', athletesCtrl.aboutMe);
 function isLoggedIn(req, res, next) {
