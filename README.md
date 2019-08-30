@@ -6,6 +6,7 @@ Link to website => https://upumpedbro.herokuapp.com/
 <p>As a user I want to be able to create my own regiment that will include meal plans and exercise's within it.</p>
 
 <h2>Background Info</h2>
+
 ![Imgur](https://i.imgur.com/wAw4Qxs.png)
 <p>When you come to my website you will need to automatically login. However there is another link that will take you to my bio in case you wanted to learn more about me. Once you login with your google credentials you will be able to see the page where you should see everybody's posts. There will be three links provided which are the 'Create Regiment','View Profile', and of course the logout link.</p>
 <p>Once you go to create your regiment, you will be asked to type in your height, weight, and a brief description of what you want to accomplish.</p>
