@@ -7,12 +7,12 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="https://kit.fontawesome.com/928dbe508c.js"></script>    
 </head>
-<body>
+<body class="page">
         <img class="logo" src="/images/logo.jpg" alt="logo">
         <% if (user) { %>
-            <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+            <a class="log" href="/logout"><i class="material-icons left"></i>Log Out</a>
         <% } else { %>
-            <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+            <a class="log" href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
         <% } %>
 </body>
 </html>

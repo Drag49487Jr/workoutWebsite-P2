@@ -10,6 +10,23 @@ h1{
   padding: top 50px;
   margin-bottom: 0;
 }
+a {
+  text-decoration: none;
+  color:red;
+}
+input{
+  font-size:30px;
+}
+.btn{
+display:block;
+border:none;
+border-radius: 50%;
+background-color:rgba(255,0,0,.7);
+cursor: pointer;
+}
+.page{
+  background: linear-gradient(to left, #8942a8, #ba382f);
+}
 .mt {
   color: black;
   text-align:center;
@@ -19,15 +36,15 @@ h1{
 }
 .media{
   position:absolute;
-  top:40%;
-  left:50%;
+  bottom:0;
+  height:40px;
 }
 
 .social{
   list-style: none;
   margin: 10px 30px;
   display: inline-block;
-  font-size:20px;
+  font-size:10px;
   padding:20px 20px;
   color:black;
   border:1px solid black;
@@ -77,16 +94,20 @@ div .front-picture{
  color:red;
  list-style: none;
  text-decoration: none;
+ font-size:30px;
 }
 nav {
   display:flex;
   justify-content: space-between;
   align-items:center;
   padding: 30px 10%;
-  background-color:black;
+  background-color:rgba(0,0,0,.8);
 }
 .logo{
+  position:absolute;
   width:100px;
+  left:1%;
+  border-radius: 50%;
 }
 .link{
   display:inline-block;
@@ -139,6 +160,16 @@ nav {
   position: absolute;
   top:90%;
   left:40%;
+}
+#new-form{
+  position:absolute;
+  top:35%;
+  left:40%;
+  font-size:50px;
+}
+.log{
+  position:absolute;
+  left:90%;
 }
 .meal{
   position:absolute;

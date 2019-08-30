@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
 
-<h1>Athlete Enters information</h1>
+<h1 id="new-title">Athlete Enters information</h1>
 <form id="new-form" action="/athletes/home" method="POST">
-    <label> Height
-        <input type="text" name="height">
+    <label>Height:
+        <input type="text" name="height"><br>
     </label>
-    <label>Weight
-        <input type="text" name="weight">
+    <label>Weight:
+        <input type="text" name="weight"><br>
     </label>
     <label>Goals:
-        <input type="text" name="description">
+        <input type="text" name="description"><br>
     </label>
-<input type="submit" value="Create Regiment">
+<input class="btn"type="submit" value="Create Regiment">
 </form>
 
 <%- include('../partials/footer') %>
