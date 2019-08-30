@@ -48,6 +48,7 @@ var regimentSchema = new mongoose.Schema({
   // }],
   height:String,
   weight: Number,
+  description:String,
   mealPlan: [mealPlanSchema],
   exercise: [exerciseSchema]
 })

@@ -96,6 +96,7 @@ nav {
   color:red;
   transition:5s;
 }
+
 #curl-side{
   height:100%;
   width:50%;
@@ -103,9 +104,33 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   margin:0 auto;
+  border:4px dashed rgba(200,30,0,.5);
+  border-radius: 30%;
+  opacity: .8;
 }
 #smile{
   width:200px;
+  position:absolute;
+  top:20%;
+  left:70%;
+  border-radius: 50%;
+}
+#about-me-title{
+  position:absolute;
+  left:70%;
+  font-size:60px;
+  font-weight:bold;
+  font-style: italic;
+}
+.about-me{
+  position:absolute;
+  top:50%;
+  left:50%;
+  font-size:20px;
+  font-style: italic;
+}
+#about-background{
+  background-color:rgba(200,30,0,.5);
 }
 #info{
   list-style: none;
@@ -114,14 +139,6 @@ nav {
   position: absolute;
   top:90%;
   left:40%;
-}
-#about-me-title{
-  position:absolute;
-  left:45%;
-}
-.about-me{
-  position:absolute;
-  top:50%;
 }
 .meal{
   position:absolute;

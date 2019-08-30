@@ -4,8 +4,9 @@
 
 <% athlete.regiments.forEach(function(r) { %>
 <li id="info">
-  Height: <%= r.height%> <br />Weight: <%= r.weight%>
-  lbs
+  Height: <%= r.height%>
+  <br>Weight: <%= r.weight%>lbs
+  <br>Description: <%= r.description%>
 </li>
 <td class="details">
   <a href="/athletes/<%= r._id %>/exerciseRoutine">Exercise Routines</a>
