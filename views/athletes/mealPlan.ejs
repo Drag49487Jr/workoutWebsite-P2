@@ -2,7 +2,7 @@
 <h1 id="meal-title">Meal Plan</h1>
 <form id="add-meal-form" action="/athletes/<%= regime._id %>/mealPlan" method="POST">
     <label>Meals:</label>
-    <select class="meal-info" name="nameMeal">
+    <select class="list" class="meal-info" name="nameMeal">
         <option value="Eggs">Eggs</option>
         <option value="Chicken Salad">Chicken Salad</option>
         <option value="Chicken Breast">Chicken Breast</option>
@@ -10,7 +10,7 @@
         <option value="Banana">Banana</option>
         <option value="Cheerios w/ Berries">Cheerios w/ Berries</option>
         <option value="Banana/Strawberry Smoothie">Banana/Strawberry Smoothie</option>
-    </select><br>
+    </select><br><br>
     <label>Servings:</label>
     <input type="number" name="quantity" min="0">
     <button class="btn" type="submit">Add Meals</button>
