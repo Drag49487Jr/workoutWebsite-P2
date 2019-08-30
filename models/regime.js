@@ -6,11 +6,13 @@ var mealPlanSchema = new Schema({
   nameMeal: {
     type:String,
     enum:[
-      'eggs',
-      'milk',
-      'bread',
-      'water',
-      'fruit',
+      'Eggs',
+      'Chicken Salad',
+      'Chicken Breast',
+      'Salmon',
+      'Banana',
+      'Cheerios w/ Berries',
+      'Banana/Strawberry Smoothie'
     ]
   },
   quantity:Number,
@@ -20,12 +22,21 @@ var exerciseSchema = new Schema({
   nameExercise: {
     type:String,
     enum:[
-      'Squats w/ Weight',
-      'Barbell Hip Thrust',
-      'Dumbbell Bulgarian Split',
-      'Heals to the Heavens',
-      'Alternating Thread the Needle',
-      'Stationary Bike'
+      'LOWERBODY:Squats w/ Weight',
+      'LOWERBODY:Barbell Hip Thrust',
+      'LEGS:Dumbbell Bulgarian Split',
+      'ABS:Heals to the Heavens',
+      'ABS:Alternating Thread the Needle',
+      'ABS:Stationary Bike',
+      'CHEST:Dumbell Bench Press',
+      'CHEST:Cable Pec Fly',
+      'CHEST:Diamond Push Ups',
+      'BICEPS:Close Grip Bar Curl',
+      'BICEPS:Dumbbell Alternate Bicep Curl',
+      'TRICEPS:Triceps Pushdown',
+      'TRICEPS:Bench Dips',
+      'TRICEPS:Decline Bar Triceps',
+
     ]
   },
   sets:{
