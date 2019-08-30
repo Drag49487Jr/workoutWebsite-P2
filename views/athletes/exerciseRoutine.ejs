@@ -1,39 +1,39 @@
 <%- include('../partials/header') %>
 
 <h1>Exercise's</h1>
-    <ul>
+    <ul class="exercise-body">
         <form id="add-exercise-form" action="/athletes/<%= regime._id %>/exerciseRoutine" method="POST">
             <section class="exercise">
                 <label>Exercise's:
-                <select name="nameExercise">
+                <select class="list"name="nameExercise">
                     <option value="Squats w/ Weight">LEGS:Squats w/ Weight</option>
                     <option value="Barbell Hip Thrust">LEGS/BOOTY:Barbell Hip Thrust</option>
                     <option value="Dumbbell Bullgarian Split">LEGS:Dumbbell Bulgarian Split</option>
                     <option value="Heals to the Heavans">ABS:Heals to the Heavans</option>
                     <option value="Alternating Thread the Needle">ABS:Alternating Thread the Needle</option>
                     <option value="Stationary Bike">ABS:Stationary Bike</option>
-            </select>
+            </select><br><br>
                 Sets:
-                    <input type="number" name="sets" min="0" max="5">
+                    <input type="number" name="sets" min="0" max="5"><br><br>
                 Reps:
-                    <input type="number" name="reps" min="0" max="20">
+                    <input type="number" name="reps" min="0" max="20"><br><br>
                 Time:
-                    <input type="text" pattern="\d:[0-5]\d" placeholder="1:30" name="time">
-            </label>
-            <button type="submit">Add Exercises</button>
+                <input type="text" pattern="\d:[0-5]\d" placeholder="1:30" name="time">
+            </label><br>
+            <br><button class="btn" type="submit">Add Exercises</button>
         </section>
         </form>
         <% regime.exercise.forEach(function(e) { %>
-            <form action="/athletes/<%= regime._id %>/exerciseRoutine/<%= e._id %>?_method=DELETE" method="POST" class="delete-exercise-form">
-                <button data='e._id' type="submit">X</button>
-            </form>
-        <section class="exercise-section">
+            <section class="exercise-section">
+                <form action="/athletes/<%= regime._id %>/exerciseRoutine/<%= e._id %>?_method=DELETE" method="POST" class="delete-exercise-form">
+                    <button class="btn" data='e._id' type="submit">Delete Exercise</button>
+                </form>
             <% console.log(e._id) %>
-            <td>Name: <%= e.nameExercise %></td>
-            <td>Sets: <%= e.sets %></td>
-            <td>Reps: <%= e.reps %></td>
+            <td>Name: <%= e.nameExercise %></td><br>
+            <td>Sets: <%= e.sets %></td><br>
+            <td>Reps: <%= e.reps %></td><br>
             <td>Time: <%= e.time %></td>
         </section>
         <% }); %>
     </ul>
-<a id="tag" href="/athletes/<%= user._id%>/home">Create Meal Plan and Exercise Routine</a>
+<a id="tag" href="/athletes/<%= user._id%>/home">Return to Profile</a>
