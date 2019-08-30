@@ -17,6 +17,9 @@ a {
 input{
   font-size:30px;
 }
+label{
+  font-size:30px;
+}
 .btn{
 display:block;
 border:none;
@@ -169,7 +172,7 @@ nav {
   opacity: .5;;
 }
 
-#tag{
+.tag{
   position: absolute;
   top:90%;
   left:40%;
@@ -201,4 +204,20 @@ nav {
 }
 .exercise-section{
   font-size:20px;
+}
+#add-meal-form{
+  position: absolute;
+  left:60%;
+  top:20%;
+}
+#meal-title{
+  font-size:60px;
+}
+.meal-info{
+  font-size:20px;
+}
+.meal-section{
+  margin-left:30px;
+  margin-top:60px;
+  font-size:25px;
 }

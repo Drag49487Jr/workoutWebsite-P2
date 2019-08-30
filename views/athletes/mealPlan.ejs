@@ -1,23 +1,25 @@
 <%- include('../partials/header') %>
-<h1>Meal Plan</h1>
+<h1 id="meal-title">Meal Plan</h1>
 <form id="add-meal-form" action="/athletes/<%= regime._id %>/mealPlan" method="POST">
-    <select name="nameMeal">
+    <label>Meals:</label>
+    <select class="meal-info" name="nameMeal">
         <option value="eggs">eggs</option>
         <option value="milk">milk</option>
         <option value="bread">bread</option>
         <option value="water">water</option>
         <option value="fruit">fruit</option>
-    </select>
-    <input type="number" name="quantity">
-        <button type="submit">Add Meals</button>
+    </select><br>
+    <label>Servings:</label>
+    <input type="number" name="quantity" min="0">
+    <button class="btn" type="submit">Add Meals</button>
 </form>
 <% regime.mealPlan.forEach(function(m) { %>
-    <form action="/athletes/<%= regime._id %>/mealPlan/<%= m._id %>?_method=DELETE" method="POST" class="delete-meal-form">
-        <button data='m._id' type="submit">X</button>
-    </form>
     <section class="meal-section">
-        <td>Name: <%= m.nameMeal %></td>
-        <td>Servings: <%= m.quantity %></td>
+            <form action="/athletes/<%= regime._id %>/mealPlan/<%= m._id %>?_method=DELETE" method="POST" class="delete-meal-form">
+                <button class="btn" data='m._id' type="submit">Delete Meal</button>
+                <td>Name: <%= m.nameMeal %></td><br>
+                <td>Servings: <%= m.quantity %></td>
+            </form>
     </section>
     <% }); %>
-    <a href="/athletes/<%= user._id%>/home">Return to Profile</a>
+    <a class="tag" href="/athletes/<%= user._id%>/home">Return to Profile</a>

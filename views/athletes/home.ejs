@@ -2,17 +2,18 @@
 
 <h1>WHATS UP ATHLETE</p>
 
-<% athlete.regiments.forEach(function(r) { %>
-
-<div class="content">
-  <li id="info">
-    Height: <%= r.height%>
-    <br>Weight: <%= r.weight%>lbs
-    <br>Description: <%= r.description%><br>
-    <td class="details">
-      <a href="/athletes/<%= r._id %>/exerciseRoutine">Exercise Routines</a>
-      <a href="/athletes/<%= r._id%>/mealPlan">Meal Plans</a>
-    </td>
-  </li>
-</div>
-<% }); %> <%- include('../partials/footer')%>
+  <% athlete.regiments.forEach(function(r) { %>
+    
+    <div class="content">
+      <li id="info">
+        Height: <%= r.height%>
+        <br>Weight: <%= r.weight%>lbs
+        <br>Description: <%= r.description%><br>
+        <td class="details">
+          <a href="/athletes/<%= r._id %>/exerciseRoutine">Exercise Routines</a>
+          <a href="/athletes/<%= r._id%>/mealPlan">Meal Plans</a>
+        </td>
+      </li>
+    </div>
+    <% }); %> <%- include('../partials/footer')%>
+    <a class="tag" href='/athletes'>Return</a>
